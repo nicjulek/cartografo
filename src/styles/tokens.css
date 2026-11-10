@@ -1,0 +1,30 @@
+:root {
+  --table: #1d2a2f;
+  --table-2: #243439;
+  --table-3: #2d4046;
+  --line: #3b5056;
+  --chalk: #ece4cf;
+  --chalk-dim: #a6b2ab;
+  --chalk-faint: #7d8b86;
+  --mark: #d0538c;
+  --mark-ink: #a8326b;
+  --paper: #efe6cf;
+  --ink: #2f2924;
+  --danger: #f09a8a;
+
+  --font-ui: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-map: 'IM Fell English', 'Iowan Old Style', Georgia, serif;
+  --font-map-sc: 'IM Fell English SC', 'IM Fell English', Georgia, serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-md: 0.9375rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.6rem;
+
+  --panel-w: 360px;
+  --bar-h: 56px;
+  --radius: 10px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  color-scheme: dark;
+}

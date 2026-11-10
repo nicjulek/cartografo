@@ -1,0 +1,160 @@
+.dialog {
+  width: min(880px, calc(100vw - 32px));
+  max-height: min(720px, calc(100dvh - 48px));
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--table-2);
+  color: var(--chalk);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.dialog::backdrop {
+  background: rgba(10, 16, 18, 0.62);
+}
+
+.dialog[open] {
+  animation: rise 0.22s var(--ease);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.inner {
+  padding: 22px 24px 26px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.head h2 {
+  margin: 0;
+  font-family: var(--font-map);
+  font-weight: 400;
+  font-size: 1.9rem;
+}
+
+.head p {
+  margin: 2px 0 0;
+  color: var(--chalk-dim);
+  font-size: var(--text-sm);
+}
+
+.close {
+  border: 0;
+  background: transparent;
+  color: var(--chalk-dim);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.close:hover {
+  background: var(--table-3);
+  color: var(--chalk);
+}
+
+.empty {
+  padding: 36px 0 20px;
+  max-width: 42ch;
+}
+
+.empty p {
+  margin: 0 0 6px;
+  color: var(--chalk-dim);
+}
+
+.empty p:first-child {
+  font-family: var(--font-map);
+  font-size: 1.3rem;
+  color: var(--chalk);
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  position: relative;
+}
+
+.open {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+}
+
+.open img,
+.noThumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1260 / 882;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--paper);
+  margin-bottom: 8px;
+  transition: transform 0.2s var(--ease);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.open:hover img {
+  transform: rotate(-0.6deg) translateY(-2px);
+}
+
+.card[data-current] img {
+  outline: 2px solid var(--mark);
+  outline-offset: 3px;
+}
+
+.name {
+  font-family: var(--font-map);
+  font-size: 1.15rem;
+}
+
+.meta {
+  color: var(--chalk-faint);
+  font-size: var(--text-xs);
+}
+
+.remove {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 0;
+  background: rgba(29, 42, 47, 0.85);
+  color: var(--chalk);
+  opacity: 0;
+  transition: opacity 0.15s var(--ease);
+}
+
+.card:hover .remove,
+.remove:focus-visible {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .remove {
+    opacity: 1;
+  }
+}
